@@ -166,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 recognition.onresult = function(event) {
-  recognition.stop();
   // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
   // The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
   // It has a getter so it can be accessed like an array
@@ -196,8 +195,6 @@ recognition.onresult = function(event) {
     event.utterance.text + '", which is "' + char + '".');
 
   };
-
-  recognition.start();
 
 
 
