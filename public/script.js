@@ -162,7 +162,7 @@ var jokes = jokeObjects.map((joke) => joke.joke);
 document.addEventListener('DOMContentLoaded', function() {
   
   recognition.start();
-  console.log('Ready to receive a color command.');
+  console.log('Ready to receive a joke command.');
 });
 
 recognition.onresult = function(event) {
