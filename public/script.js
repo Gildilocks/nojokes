@@ -10,7 +10,7 @@ var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
-recognition.continuous = true;
+// recognition.continuous = false;
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
@@ -159,11 +159,10 @@ var jokeObjects = [
 
 var jokes = jokeObjects.map((joke) => joke.joke);
 
-document.addEventListener('DOMContentLoaded', function() {
-  
+document.body.onclick = function() {
   recognition.start();
-  console.log('Ready to receive a joke command.');
-});
+  console.log('Ready to receive a color command.');
+};
 
 recognition.onresult = function(event) {
   // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
@@ -195,6 +194,8 @@ recognition.onresult = function(event) {
     event.utterance.text + '", which is "' + char + '".');
 
   };
+
+
 
 
 
