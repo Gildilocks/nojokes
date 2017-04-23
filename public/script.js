@@ -159,10 +159,11 @@ var jokeObjects = [
 
 var jokes = jokeObjects.map((joke) => joke.joke);
 
-document.body.onclick = function() {
+document.addEventListener('DOMContentLoaded', function() {
+  
   recognition.start();
   console.log('Ready to receive a color command.');
-};
+});
 
 recognition.onresult = function(event) {
   recognition.stop();
